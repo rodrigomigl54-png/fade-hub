@@ -11,14 +11,16 @@ fade-hub/
 ├── assets/
 │   ├── css/style.css       # svi stilovi
 │   ├── js/main.js          # sva logika (intro, galerija, utisci, WhatsApp forma)
-│   ├── logo.jpg            # ← DODAJ: logo za nav, footer, favicon
-│   ├── logo-intro-600.png  # ← DODAJ: veliki logo za intro (600×600+)
+│   ├── logo.jpg            # kvadratni logo (deljenje linka / Open Graph)
+│   ├── logo-wide.png       # logo za navigaciju, hero i footer
+│   ├── logo-intro-600.png  # veliki logo za intro
+│   ├── favicon.png         # ikonica taba
 │   └── gallery/
-│       └── rad-1.jpg … rad-8.jpg   # ← DODAJ: fotografije radova (portret 3:4)
+│       └── rad-1.jpg … rad-8.jpg   # fotografije radova (1200×1600)
 └── tests/run-tests.mjs     # automatski test (Playwright)
 ```
 
-Dok slike ne dodaš, sajt radi i prikazuje tamne placeholdere umesto slomljenih slika.
+Da zameniš sliku, otpremi novu sa istim nazivom (preko GitHub-a ili pošalji Claude-u).
 
 ## Podešavanja (vrh `assets/js/main.js`)
 

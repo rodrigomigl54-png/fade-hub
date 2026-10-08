@@ -10,7 +10,7 @@
   --muted: #A8A49C;
   --accent: #FF9900;
   --accent-dim: rgba(255, 153, 0, .18);
-  --error: #FF6B5B;
+  --error: #FFB347;
   --line: rgba(242, 240, 235, .12);
 
   --serif: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
@@ -24,6 +24,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+:root { color-scheme: dark; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;

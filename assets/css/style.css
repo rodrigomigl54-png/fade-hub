@@ -24,7 +24,31 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-:root { color-scheme: dark; }
+/* Sajt je već taman. "only dark" i blok ispod govore browseru (Samsung Internet, Chrome)
+   da ne primenjuje svoj "tamni režim" i ne menja boje (narandžasta bi postala crvena). */
+:root { color-scheme: only dark; --orange-img: url("../orange.png"); }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: #0A0A0A;
+    --black-2: #141414;
+    --black-3: #1E1E1E;
+    --white: #F2F0EB;
+    --muted: #A8A49C;
+    --accent: #FF9900;
+    --accent-dim: rgba(255, 153, 0, .18);
+    --error: #FFB347;
+    --line: rgba(242, 240, 235, .12);
+
+    --serif: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Inter", "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --gutter: clamp(16px, 5vw, 64px);
+    --nav-h: 72px;
+    --ease: cubic-bezier(.77, 0, .175, 1);
+    --ease-out: cubic-bezier(.16, 1, .3, 1);
+  }
+}
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -63,7 +87,7 @@ img.is-missing { visibility: hidden; }
   overflow: hidden; isolation: isolate; transition: color .4s var(--ease);
 }
 .btn::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--accent);
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--accent) var(--orange-img);
   transform: scaleY(0); transform-origin: bottom; transition: transform .45s var(--ease);
 }
 .btn:hover, .btn:focus-visible { color: var(--black); }
@@ -105,7 +129,7 @@ img.is-missing { visibility: hidden; }
 
 .intro-blade {
   position: absolute; top: 50%; left: 0; width: 100%; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent) 30%, #fff 50%, var(--accent) 70%, transparent);
+  background: url("../blade.png") center / 100% 100% no-repeat;
   box-shadow: 0 0 18px var(--accent);
   transform: scaleX(0); transform-origin: left; opacity: 0;
 }
@@ -262,8 +286,8 @@ img.is-missing { visibility: hidden; }
 .pole::after { bottom: 0; border-top: 2px solid var(--accent); }
 .pole-stripes {
   position: absolute; inset: 0;
-  background: repeating-linear-gradient(-45deg, var(--accent) 0 14px, var(--black) 14px 28px);
-  background-size: 100% 79.2px; /* 28px * √2 * 2 => besprekorna petlja */
+  /* Pruge su slika (assets/stripes.png), ne CSS boja: tamni režim telefona ne menja boje slika */
+  background: var(--black) url("../stripes.png") 0 0 / 80px 80px repeat;
   animation: poleSpin 1.6s linear infinite;
   will-change: background-position;
 }
@@ -271,7 +295,7 @@ img.is-missing { visibility: hidden; }
   content: ""; position: absolute; top: 0; bottom: 0; left: 22%; width: 22%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .14), rgba(255, 255, 255, 0));
 }
-@keyframes poleSpin { from { background-position: 0 0; } to { background-position: 0 -79.2px; } }
+@keyframes poleSpin { from { background-position: 0 0; } to { background-position: 0 -80px; } }
 
 /* ==========================================================
    MARQUEE
@@ -344,7 +368,7 @@ img.is-missing { visibility: hidden; }
   width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--accent); background: transparent; color: var(--accent);
   font-size: 20px; cursor: pointer; transition: background .3s, color .3s;
 }
-.carousel-btn:hover { background: var(--accent); color: var(--black); }
+.carousel-btn:hover { background: var(--accent) var(--orange-img); color: var(--black); }
 .carousel-dots { display: flex; gap: 6px; }
 .carousel-dots button { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; position: relative; }
 .carousel-dots button::before { content: ""; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--line); transition: background .3s, transform .3s; }
@@ -438,7 +462,7 @@ img.is-missing { visibility: hidden; }
 .contact-info dd a { text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .3s; }
 .contact-info dd a:hover { border-color: var(--accent); }
 .map { aspect-ratio: 4 / 3; border: 1px solid var(--line); background: var(--black-2); }
-.map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(.92) contrast(.9); }
+.map iframe { width: 100%; height: 100%; border: 0; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 64px 0 48px; }
@@ -480,7 +504,7 @@ img.is-missing { visibility: hidden; }
   .footer-inner > img { grid-column: 1 / -1; }
   .sticky-cta {
     display: flex; align-items: center; justify-content: center; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 90;
-    min-height: 52px; background: var(--accent); color: var(--black); text-decoration: none; font-weight: 600;
+    min-height: 52px; background: var(--accent) var(--orange-img); color: var(--black); text-decoration: none; font-weight: 600;
     letter-spacing: .1em; text-transform: uppercase; font-size: 14px; box-shadow: 0 8px 30px rgba(0, 0, 0, .5);
     transform: translateY(140%); transition: transform .5s var(--ease-out);
   }

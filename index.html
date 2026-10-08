@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fade Hub 021 — Barber, Novo naselje, Novi Sad</title>
+  <meta name="description" content="Fade Hub 021 — barber shop na Novom naselju u Novom Sadu. Fade, klasično šišanje, brada i brkovi. Bulevar Jovana Dučića 1. Zakaži: 063 858 4999.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fade Hub 021 — Preciznost. Stil. Karakter.">
+  <meta property="og:description" content="Barber shop na Novom naselju, Novi Sad. Pon–Sub 10–21h. Tel: 063 858 4999.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <meta property="og:locale" content="sr_RS">
+
+  <!-- LOGO: zameni assets/logo.jpg (nav, footer, favicon) i assets/logo-intro-600.png (intro) -->
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Fade Hub 021",
+    "image": "assets/logo.jpg",
+    "telephone": "+381638584999",
+    "priceRange": "250–1200 RSD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bulevar Jovana Dučića 1",
+      "addressLocality": "Novi Sad",
+      "addressRegion": "Novo naselje",
+      "addressCountry": "RS"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    }],
+    "sameAs": ["https://www.instagram.com/fadehub021"],
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fade"}, "price": "1200", "priceCurrency": "RSD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Klasično šišanje"}, "price": "800", "priceCurrency": "RSD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brada i brkovi"}, "price": "600", "priceCurrency": "RSD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pranje kose"}, "price": "250", "priceCurrency": "RSD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skidanje dlaka sa lica i ušiju voskom"}, "price": "500", "priceCurrency": "RSD"}
+    ]
+  }
+  </script>
+  <script>
+    // Intro se prikazuje samo prvi put u sesiji; oznaka se postavlja pre renderovanja da nema treptanja.
+    try { if (sessionStorage.getItem('fh_intro_seen')) document.documentElement.classList.add('intro-seen'); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskoči na sadržaj</a>
+
+  <!-- ============ INTRO ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-half intro-half--left"></div>
+    <div class="intro-half intro-half--right"></div>
+    <div class="intro-content">
+      <img class="intro-logo" src="assets/logo-intro-600.png" alt="" width="600" height="600" data-fallback="assets/logo.jpg">
+    </div>
+    <div class="intro-blade"></div>
+    <div class="intro-counter"><span id="introCount">000</span></div>
+    <button class="intro-skip" id="introSkip" type="button">Preskoči</button>
+  </div>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo" aria-label="Fade Hub 021 — početak">
+      <img src="assets/logo.jpg" alt="Fade Hub 021 logo" width="44" height="44">
+    </a>
+    <nav aria-label="Glavna navigacija">
+      <ul class="nav-links">
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#galerija">Galerija</a></li>
+        <li><a href="#o-nama">O nama</a></li>
+        <li><a href="#utisci">Utisci</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a href="#kontakt" class="btn btn--small js-book magnetic">Zakaži termin</a>
+    <button class="burger" id="burger" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#usluge">Usluge</a></li>
+      <li><a href="#galerija">Galerija</a></li>
+      <li><a href="#o-nama">O nama</a></li>
+      <li><a href="#utisci">Utisci</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="btn js-book">Zakaži termin</a>
+    <a href="tel:+381638584999" class="mobile-menu-tel">063 858 4999</a>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="pole pole--left" aria-hidden="true"><div class="pole-stripes"></div></div>
+      <div class="pole pole--right" aria-hidden="true"><div class="pole-stripes"></div></div>
+
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Barber shop · Novo naselje · Novi Sad</p>
+        <h1 class="hero-title" id="heroTitle">
+          <span class="line"><span>Preciznost.</span></span>
+          <span class="line"><span><em>Stil.</em></span></span>
+          <span class="line"><span>Karakter.</span></span>
+        </h1>
+        <p class="hero-sub">Fade, klasično šišanje i brada — u srcu Novog naselja.</p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn js-book magnetic">Zakaži termin</a>
+          <a href="tel:+381638584999" class="btn btn--ghost magnetic">063 858 4999</a>
+        </div>
+      </div>
+      <a href="#usluge" class="scroll-indicator" aria-label="Skroluj na usluge"><span></span></a>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span>
+    </div></div>
+
+    <!-- ============ 01 USLUGE ============ -->
+    <section class="section" id="usluge">
+      <div class="container">
+        <p class="section-label reveal"><span class="num">01</span> Usluge</p>
+        <h2 class="section-title reveal">Cenovnik</h2>
+        <div class="services">
+          <article class="service-card reveal">
+            <h3>Fade</h3>
+            <p>Precizni prelazi od kože do dužine.</p>
+            <p class="price">1200 <small>RSD</small></p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Klasično šišanje</h3>
+            <p>Čisto i uredno šišanje na klasičan način.</p>
+            <p class="price">800 <small>RSD</small></p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Brada i brkovi</h3>
+            <p>Oblikovanje brade i brkova.</p>
+            <p class="price">600 <small>RSD</small></p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Pranje kose</h3>
+            <p>Osvežavajuće pranje kose.</p>
+            <p class="price">250 <small>RSD</small></p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Skidanje dlaka sa lica i ušiju voskom</h3>
+            <p>Brzo i uredno uklanjanje dlaka sa lica i ušiju voskom.</p>
+            <p class="price">500 <small>RSD</small></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 GALERIJA ============ -->
+    <section class="section section--dark" id="galerija">
+      <div class="container">
+        <p class="section-label reveal"><span class="num">02</span> Galerija</p>
+        <h2 class="section-title reveal">Naši radovi</h2>
+      </div>
+      <div class="carousel" id="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Galerija radova">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- SLIKE: assets/gallery/rad-1.jpg … rad-8.jpg (portret 3:4) -->
+          <figure class="slide"><img src="assets/gallery/rad-1.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 1" width="1200" height="1600"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-2.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 2" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-3.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 3" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-4.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 4" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-5.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 5" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-6.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 6" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-7.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 7" width="1200" height="1600" loading="lazy"></figure>
+          <figure class="slide"><img src="assets/gallery/rad-8.jpg" alt="Fade šišanje, Fade Hub 021 Novi Sad, rad 8" width="1200" height="1600" loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="container carousel-controls">
+        <button class="carousel-btn magnetic" id="prevBtn" type="button" aria-label="Prethodna fotografija">&larr;</button>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Izaberi fotografiju"></div>
+        <span class="carousel-counter" id="carouselCounter">01 / 08</span>
+        <button class="carousel-btn magnetic" id="nextBtn" type="button" aria-label="Sledeća fotografija">&rarr;</button>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografija" hidden>
+      <button class="lightbox-close" id="lbClose" type="button" aria-label="Zatvori">&times;</button>
+      <button class="lightbox-nav lightbox-nav--prev" id="lbPrev" type="button" aria-label="Prethodna">&larr;</button>
+      <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+      <button class="lightbox-nav lightbox-nav--next" id="lbNext" type="button" aria-label="Sledeća">&rarr;</button>
+    </div>
+
+    <!-- ============ 03 O NAMA ============ -->
+    <section class="section" id="o-nama">
+      <div class="container about">
+        <div class="about-text">
+          <p class="section-label reveal"><span class="num">03</span> O nama</p>
+          <h2 class="section-title reveal">Više od šišanja</h2>
+          <div class="cut-line" id="cutLine" aria-hidden="true"><span></span></div>
+          <p class="about-lead reveal">Fade Hub 021 je rođen iz ljubavi prema preciznom barbering-u. Na Novom naselju, u Novom Sadu, stvaramo više od frizure — stvaramo karakter.</p>
+          <p class="reveal">Svako šišanje je prilika da ispričamo priču kroz linije, prelaze i detalje. Od klasičnog fade-a do hrabrog buzz cut-a, svaki rez je prilagođen tebi.</p>
+        </div>
+        <div class="about-art" aria-hidden="true">
+          <svg class="scissors" id="scissors" viewBox="0 0 160 160" width="160" height="160">
+            <g class="blade blade--top">
+              <path d="M80 80 L150 52 L152 58 Z" fill="#0A0A0A" stroke="#F2F0EB" stroke-width="2"/>
+              <circle cx="40" cy="104" r="17" fill="none" stroke="#FF9900" stroke-width="7"/>
+              <path d="M54 95 L80 80" stroke="#FF9900" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <g class="blade blade--bottom">
+              <path d="M80 80 L150 108 L152 102 Z" fill="#0A0A0A" stroke="#F2F0EB" stroke-width="2"/>
+              <circle cx="40" cy="56" r="17" fill="none" stroke="#FF9900" stroke-width="7"/>
+              <path d="M54 65 L80 80" stroke="#FF9900" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <circle cx="80" cy="80" r="4" fill="#FF9900"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee marquee--reverse" aria-hidden="true"><div class="marquee-track">
+      <span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span><span>FADE HUB • 021 • NOVI SAD • NOVO NASELJE • </span>
+    </div></div>
+
+    <!-- ============ 04 UTISCI ============ -->
+    <section class="section section--dark" id="utisci">
+      <div class="container">
+        <p class="section-label reveal"><span class="num">04</span> Utisci</p>
+        <h2 class="section-title reveal">Utisci klijenata</h2>
+        <div class="testimonials" id="testimonialTrack" aria-live="polite">
+          <p class="testimonials-empty" id="testimonialsEmpty">Budi prvi koji će ostaviti utisak.</p>
+        </div>
+
+        <form class="form review-form" id="reviewForm" novalidate>
+          <h3>Ostavi utisak</h3>
+          <div class="field">
+            <label for="reviewName">Ime (opciono)</label>
+            <input id="reviewName" name="name" type="text" maxlength="60" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <span class="label" id="ratingLabel">Ocena</span>
+            <div class="stars" id="stars" role="radiogroup" aria-labelledby="ratingLabel">
+              <button type="button" role="radio" aria-checked="false" aria-label="1 zvezdica" data-value="1">★</button>
+              <button type="button" role="radio" aria-checked="false" aria-label="2 zvezdice" data-value="2">★</button>
+              <button type="button" role="radio" aria-checked="false" aria-label="3 zvezdice" data-value="3">★</button>
+              <button type="button" role="radio" aria-checked="false" aria-label="4 zvezdice" data-value="4">★</button>
+              <button type="button" role="radio" aria-checked="false" aria-label="5 zvezdica" data-value="5">★</button>
+            </div>
+            <p class="error" id="ratingError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="reviewMsg">Poruka</label>
+            <textarea id="reviewMsg" name="message" rows="4" maxlength="500" required></textarea>
+            <p class="error" id="reviewMsgError" role="alert"></p>
+          </div>
+          <!-- honeypot: ljudi ga ne vide, botovi ga popune -->
+          <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" id="reviewWebsite" tabindex="-1" autocomplete="off"></label></div>
+          <button class="btn magnetic" type="submit">Objavi utisak</button>
+          <div class="notice" id="reviewNotice" role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ 05 KONTAKT ============ -->
+    <section class="section" id="kontakt">
+      <div class="container">
+        <p class="section-label reveal"><span class="num">05</span> Kontakt</p>
+        <h2 class="section-title reveal">Zakaži termin</h2>
+        <div class="contact">
+          <div class="contact-info">
+            <dl>
+              <dt>Adresa</dt>
+              <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Bulevar+Jovana+Du%C4%8Di%C4%87a+1%2C+Novi+Sad" target="_blank" rel="noopener">Bulevar Jovana Dučića 1<br>Novo naselje, Novi Sad</a></dd>
+              <dt>Radno vreme</dt>
+              <dd>Pon – Sub: 10:00 – 21:00<br>Nedelja: zatvoreno</dd>
+              <dt>Telefon</dt>
+              <dd><a href="tel:+381638584999">063 858 4999</a></dd>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/fadehub021" target="_blank" rel="noopener">@fadehub021</a></dd>
+            </dl>
+            <div class="map">
+              <iframe title="Mapa — Fade Hub 021, Bulevar Jovana Dučića 1, Novi Sad" src="https://www.google.com/maps?q=Bulevar+Jovana+Du%C4%8Di%C4%87a+1,+Novi+Sad&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <form class="form" id="bookingForm" novalidate>
+            <p class="form-intro">Popuni formu — otvoriće se WhatsApp sa gotovom porukom za salon.</p>
+            <div class="field">
+              <label for="name">Ime i prezime *</label>
+              <input id="name" name="name" type="text" required maxlength="60" autocomplete="name">
+              <p class="error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon *</label>
+              <input id="phone" name="phone" type="tel" required maxlength="20" autocomplete="tel" inputmode="tel" placeholder="06x xxx xxxx">
+              <p class="error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="service">Usluga *</label>
+              <select id="service" name="service" required>
+                <option value="">Izaberi uslugu</option>
+                <option value="fade">Fade (1200 RSD)</option>
+                <option value="klasicno">Klasično šišanje (800 RSD)</option>
+                <option value="brada-brkovi">Brada i brkovi (600 RSD)</option>
+                <option value="pranje">Pranje kose (250 RSD)</option>
+                <option value="vosak">Skidanje dlaka sa lica i ušiju voskom (500 RSD)</option>
+              </select>
+              <p class="error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="date">Datum *</label>
+              <input id="date" name="date" type="date" required>
+              <p class="error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="note">Napomena <span class="counter" id="noteCounter">0 / 300</span></label>
+              <textarea id="note" name="note" rows="3" maxlength="300" placeholder="Željeno vreme, dodatne želje…"></textarea>
+            </div>
+            <button class="btn magnetic" type="submit" id="bookingSubmit">Pošalji zahtev</button>
+            <div class="notice" id="bookingNotice" role="status" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="assets/logo.jpg" alt="Fade Hub 021 logo" width="64" height="64" loading="lazy">
+      <ul class="footer-links">
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#galerija">Galerija</a></li>
+        <li><a href="#o-nama">O nama</a></li>
+        <li><a href="#utisci">Utisci</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <ul class="footer-social">
+        <li><a href="https://www.instagram.com/fadehub021" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="tel:+381638584999">063 858 4999</a></li>
+        <li><a href="#kontakt" class="js-book">Zakaži termin</a></li>
+      </ul>
+      <p class="copy">© <span id="year">2026</span> Fade Hub 021 · Bulevar Jovana Dučića 1, Novi Sad</p>
+    </div>
+  </footer>
+
+  <a href="#kontakt" class="sticky-cta js-book">Zakaži termin</a>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -5,3 +5,6 @@ desktop.ini
 node_modules/
 .vscode/
 .idea/
+tests/results.json
+tests/screenshots/
+package-lock.json
